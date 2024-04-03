@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/home.css";
+import "../../styles/index.css";
 import { CardPeople } from "../component/cardPeople";
 import { CardPlanet } from "../component/cardPlanets";
 import { CardVehicles } from "../component/cardVehicles";

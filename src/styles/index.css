@@ -1,3 +1,8 @@
+.mainContainer {
+  /* background-color: blue; */
+  background-image: url("../img/space.jpg");
+}
+
 .mainTitle {
   color: rgb(56, 54, 51);
   text-align: left;
