@@ -14,9 +14,9 @@ export const Single = (props) => {
   return (
     <div className="container">
       <div className="card">
-        <p>Name: {store.peopleProperties?.name}</p>
+        <p>Gender: {store.peopleProperties?.gender}</p>
         <p>Height: {store.peopleProperties?.height}</p>
-
+        <p>Mass: {store.peopleProperties?.mass}</p>
       </div>
     </div>
   );
