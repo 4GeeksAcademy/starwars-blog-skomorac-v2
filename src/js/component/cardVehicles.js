@@ -16,6 +16,7 @@ export const CardVehicles = () => {
       <div className="row">
         <div className="col-12">
           <div className="card-slider">
+            <h2 className="mainTitle">Vehicles</h2>
             <div className="card-container" ref={cardContainerRef}>
               {store.vehicles &&
                 store.vehicles.map((el) => (

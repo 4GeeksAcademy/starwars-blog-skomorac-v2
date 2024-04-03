@@ -16,6 +16,7 @@ export const CardPlanet = () => {
       <div className="row">
         <div className="col-12">
           <div className="card-slider">
+          <h2 className="mainTitle">Planets</h2>
             <div className="card-container" ref={cardContainerRef}>
               {store.planets &&
                 store.planets.map((el) => (
