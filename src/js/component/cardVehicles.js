@@ -1,14 +1,14 @@
+// CardVehicles.jsx
 import React, { useContext, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/index.css";
 
-export const CardPeople = () => {
+export const CardVehicles = () => {
   const { store, actions } = useContext(Context);
   const cardContainerRef = useRef(null);
 
   useEffect(() => {
-    actions.fetchCharacterDetails();
+    actions.fetchVehicleDetails();
   }, []);
 
   return (
@@ -17,31 +17,32 @@ export const CardPeople = () => {
         <div className="col-12">
           <div className="card-slider">
             <div className="card-container" ref={cardContainerRef}>
-              {store.people &&
-                store.people.map((el) => (
+              {store.vehicles &&
+                store.vehicles.map((el) => (
                   <div className="card" key={el.uid}>
                     <img
-                      src={`https://starwars-visualguide.com/assets/img/characters/${el.uid}.jpg`}
+                      src={`https://starwars-visualguide.com/assets/img/vehicles/${el.uid}.jpg`}
                       className="card-img-top"
                       alt={el.name}
                     />
                     <div className="card-body">
                       <h5 className="card-title">{el.name}</h5>
-                      {store.characterDetails[el.uid] && (
+                      {store.vehicleDetails[el.uid] && (
                         <div>
                           <p className="card-text">
-                            Gender: {store.characterDetails[el.uid].gender}
+                            Model: {store.vehicleDetails[el.uid].model}
                           </p>
                           <p className="card-text">
-                            Height: {store.characterDetails[el.uid].height}
+                            Vehicle class:{" "}
+                            {store.vehicleDetails[el.uid].vehicle_class}
                           </p>
                           <p className="card-text">
-                            Mass: {store.characterDetails[el.uid].mass}
+                            Crew members: {store.vehicleDetails[el.uid].crew}
                           </p>
                         </div>
                       )}
                       <Link
-                        to={`/single/${el.uid}`}
+                        to={`/vehicleSingle/${el.uid}`}
                         className="btn btn-primary learn-more-btn"
                       >
                         Learn more!

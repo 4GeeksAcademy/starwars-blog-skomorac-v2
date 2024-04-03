@@ -3,25 +3,25 @@ import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Single = (props) => {
+export const VehicleSingle = (props) => {
   const { store, actions } = useContext(Context);
   const { theid } = useParams();
 
   useEffect(() => {
-    actions.getPeopleProperties(theid);
+    actions.getVehicleProperties(theid);
   }, []);
 
   return (
     <div className="container">
       <div className="card">
-        <p>Gender: {store.peopleProperties?.gender}</p>
-        <p>Height: {store.peopleProperties?.height}</p>
-        <p>Mass: {store.peopleProperties?.mass}</p>
+        <p>Model: {store.vehicleProperties?.model}</p>
+        <p>Vehicle class: {store.vehicleProperties?.vehicle_class}</p>
+        <p>Crew members: {store.vehicleProperties?.crew}</p>
       </div>
     </div>
   );
 };
 
-Single.propTypes = {
+VehicleSingle.propTypes = {
   match: PropTypes.object,
 };
