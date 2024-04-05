@@ -7,9 +7,9 @@ export const CardVehicles = () => {
   const { store, actions } = useContext(Context);
   const cardContainerRef = useRef(null);
 
-  useEffect(() => {
-    actions.fetchVehicleDetails();
-  }, []);
+  // useEffect(() => {
+  //   actions.fetchVehicleDetails();
+  // }, []);
 
   return (
     <div className="container mb-5">

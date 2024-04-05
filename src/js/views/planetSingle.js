@@ -6,6 +6,8 @@ import { Context } from "../store/appContext";
 export const PlanetSingle = (props) => {
   const { store, actions } = useContext(Context);
   const { theid } = useParams();
+  console.log(store.planetProperties);
+  console.log(store.planetDetails);
 
   useEffect(() => {
     actions.getPlanetProperties(theid);

@@ -6,6 +6,8 @@ import { Context } from "../store/appContext";
 export const Single = (props) => {
   const { store, actions } = useContext(Context);
   const { theid } = useParams();
+  console.log(store.peopleProperties);
+  console.log(store.characterDetails);
 
   useEffect(() => {
     actions.getPeopleProperties(theid);
@@ -38,7 +40,9 @@ export const Single = (props) => {
                 <div className="card border-dark">
                   <div className="card-body">
                     <h5 className="card-title">Gender</h5>
-                    <p className="card-text">{store.peopleProperties?.gender}</p>
+                    <p className="card-text">
+                      {store.peopleProperties?.gender}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -46,7 +50,9 @@ export const Single = (props) => {
                 <div className="card border-dark">
                   <div className="card-body">
                     <h5 className="card-title">Height</h5>
-                    <p className="card-text">{store.peopleProperties?.height}</p>
+                    <p className="card-text">
+                      {store.peopleProperties?.height}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -64,7 +70,9 @@ export const Single = (props) => {
                 <div className="card border-dark">
                   <div className="card-body">
                     <h5 className="card-title">Hair color</h5>
-                    <p className="card-text">{store.peopleProperties?.hair_color}</p>
+                    <p className="card-text">
+                      {store.peopleProperties?.hair_color}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -72,7 +80,9 @@ export const Single = (props) => {
                 <div className="card border-dark">
                   <div className="card-body">
                     <h5 className="card-title">Eye color</h5>
-                    <p className="card-text">{store.peopleProperties?.eye_color}</p>
+                    <p className="card-text">
+                      {store.peopleProperties?.eye_color}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -80,7 +90,9 @@ export const Single = (props) => {
                 <div className="card border-dark">
                   <div className="card-body">
                     <h5 className="card-title">Birth year</h5>
-                    <p className="card-text">{store.peopleProperties?.birth_year}</p>
+                    <p className="card-text">
+                      {store.peopleProperties?.birth_year}
+                    </p>
                   </div>
                 </div>
               </div>

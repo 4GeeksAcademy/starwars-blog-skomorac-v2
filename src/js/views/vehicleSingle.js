@@ -6,6 +6,8 @@ import { Context } from "../store/appContext";
 export const VehicleSingle = (props) => {
   const { store, actions } = useContext(Context);
   const { theid } = useParams();
+  console.log(store.vehicleProperties);
+  console.log(store.vehicleDetails);
 
   useEffect(() => {
     actions.getVehicleProperties(theid);

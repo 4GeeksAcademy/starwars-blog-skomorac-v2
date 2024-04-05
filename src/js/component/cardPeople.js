@@ -7,9 +7,9 @@ export const CardPeople = () => {
   const { store, actions } = useContext(Context);
   const cardContainerRef = useRef(null);
 
-  useEffect(() => {
-    actions.fetchCharacterDetails();
-  }, []);
+  // useEffect(() => {
+  //   actions.fetchCharacterDetails();
+  // }, []);
 
   return (
     <div className="container mb-5">
@@ -47,6 +47,7 @@ export const CardPeople = () => {
                       >
                         Learn more!
                       </Link>
+                      <i className="fa fa-star mr-2"></i>
                     </div>
                   </div>
                 ))}

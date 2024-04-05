@@ -41,6 +41,12 @@
   left: 10px; /* Adjust as needed */
 }
 
+.fa-star {
+  position: absolute;
+  bottom: 20px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+}
+
 .logo {
   margin-left: 1rem;
 }
