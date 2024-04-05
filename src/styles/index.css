@@ -40,3 +40,7 @@
   bottom: 10px; /* Adjust as needed */
   left: 10px; /* Adjust as needed */
 }
+
+.logo {
+  margin-left: 1rem;
+}
