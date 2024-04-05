@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
-import ("../../styles/index.css")
+import("../../styles/index.css");
 
 export const Navbar = () => {
   return (
@@ -17,9 +17,7 @@ export const Navbar = () => {
       </Link>
       <div className="ml-auto">
         <Link to="/demo">
-          <button className="btn btn-primary">
-            Check the Context in action
-          </button>
+          <button className="btn btn-primary">Favourites</button>
         </Link>
       </div>
     </nav>

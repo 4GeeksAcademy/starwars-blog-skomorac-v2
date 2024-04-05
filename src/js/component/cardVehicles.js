@@ -48,6 +48,7 @@ export const CardVehicles = () => {
                       >
                         Learn more!
                       </Link>
+                      <i className="fa fa-star mr-2"></i>
                     </div>
                   </div>
                 ))}

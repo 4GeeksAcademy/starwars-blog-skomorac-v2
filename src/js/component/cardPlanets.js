@@ -46,6 +46,7 @@ export const CardPlanet = () => {
                       >
                         Learn more!
                       </Link>
+                      <i className="fa fa-star mr-2"></i>
                     </div>
                   </div>
                 ))}
