@@ -7,6 +7,10 @@ export const CardVehicles = () => {
   const { store, actions } = useContext(Context);
   const cardContainerRef = useRef(null);
 
+  const addToFavorites = () => {
+    console.log(store.people);
+  };
+
   // useEffect(() => {
   //   actions.fetchVehicleDetails();
   // }, []);
@@ -48,7 +52,12 @@ export const CardVehicles = () => {
                       >
                         Learn more!
                       </Link>
-                      <i className="fa fa-star mr-2"></i>
+                      <button
+                        className="btn btn-warning ml-2 favorite-btn"
+                        onClick={addToFavorites}
+                      >
+                        <i className="fa fa-star mr-2"></i>
+                      </button>
                     </div>
                   </div>
                 ))}

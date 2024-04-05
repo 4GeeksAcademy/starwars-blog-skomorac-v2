@@ -41,13 +41,10 @@
   left: 10px; /* Adjust as needed */
 }
 
-.fa-star {
+.favorite-btn {
   position: absolute;
-  bottom: 15px; /* Adjust as needed */
+  bottom: 10px; /* Adjust as needed */
   right: 10px; /* Adjust as needed */
-  border: 1px solid #000; /* Add border around the icon */
-  padding: 5px; /* Add padding inside the border */
-  border-radius: 15%; /* Make the border round */
 }
 
 .logo {
