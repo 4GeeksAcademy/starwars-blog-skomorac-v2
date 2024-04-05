@@ -479,6 +479,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           url: "https://www.swapi.tech/api/vehicles/24",
         },
       },
+
+      favorites: [],
     },
 
     actions: {
