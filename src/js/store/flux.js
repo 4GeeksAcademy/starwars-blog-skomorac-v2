@@ -487,7 +487,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       addToFavorites: (id, name) => {
         const { favorites } = getStore();
         const isFavoriteExist = favorites.find(
-          (favorite) => favorite.id === id
+          (favorite) => favorite.name === name
         );
 
         if (!isFavoriteExist) {

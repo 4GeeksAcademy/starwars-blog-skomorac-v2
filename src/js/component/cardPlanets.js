@@ -10,7 +10,7 @@ export const CardPlanet = () => {
   const addToFavorites = (id, name) => {
     // Check if the favorite already exists
     const isFavoriteExist = store.favorites.find(
-      (favorite) => favorite.id === id
+      (favorite) => favorite.name === name
     );
 
     if (!isFavoriteExist) {
