@@ -23,7 +23,7 @@ export const Single = (props) => {
               style={{ width: "100%", height: "auto", objectFit: "cover" }}
             />
           </div>
-          <div className="col-md-7 p-4 d-flex flex-column justify-content-between">
+          <div className="col-md-7 p-4 d-flex flex-column justify-content-between singlePage">
             <div>
               <h2>{store.peopleProperties?.name}</h2>
               <p>
