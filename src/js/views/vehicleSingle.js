@@ -35,7 +35,7 @@ export const VehicleSingle = (props) => {
             <hr />
             <div className="row">
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">Manufacturer</h5>
                     <p className="card-text">
@@ -45,7 +45,7 @@ export const VehicleSingle = (props) => {
                 </div>
               </div>
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">Cost in credits</h5>
                     <p className="card-text">
@@ -55,7 +55,7 @@ export const VehicleSingle = (props) => {
                 </div>
               </div>
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">length</h5>
                     <p className="card-text">
@@ -67,7 +67,7 @@ export const VehicleSingle = (props) => {
             </div>
             <div className="row mt-3">
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">Crew</h5>
                     <p className="card-text">{store.vehicleProperties?.crew}</p>
@@ -75,7 +75,7 @@ export const VehicleSingle = (props) => {
                 </div>
               </div>
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">Passengers</h5>
                     <p className="card-text">
@@ -85,7 +85,7 @@ export const VehicleSingle = (props) => {
                 </div>
               </div>
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">Max atmosphering speed</h5>
                     <p className="card-text">

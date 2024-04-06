@@ -1,5 +1,7 @@
 .mainContainer {
   background-color: rgb(69, 70, 71);
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .h-100 {
@@ -59,6 +61,11 @@
   position: absolute;
   bottom: 10px; /* Adjust as needed */
   right: 10px; /* Adjust as needed */
+}
+
+.badge-pill {
+  color: black;
+  font-size: 15px;
 }
 
 .logo {

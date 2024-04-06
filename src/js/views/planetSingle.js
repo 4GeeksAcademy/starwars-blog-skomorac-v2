@@ -35,7 +35,7 @@ export const PlanetSingle = (props) => {
             <hr />
             <div className="row">
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">Diameter</h5>
                     <p className="card-text">
@@ -45,7 +45,7 @@ export const PlanetSingle = (props) => {
                 </div>
               </div>
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">Rotation period</h5>
                     <p className="card-text">
@@ -55,7 +55,7 @@ export const PlanetSingle = (props) => {
                 </div>
               </div>
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">Orbital period</h5>
                     <p className="card-text">
@@ -67,7 +67,7 @@ export const PlanetSingle = (props) => {
             </div>
             <div className="row mt-3">
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">Climate</h5>
                     <p className="card-text">
@@ -77,7 +77,7 @@ export const PlanetSingle = (props) => {
                 </div>
               </div>
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">Surface water</h5>
                     <p className="card-text">
@@ -87,7 +87,7 @@ export const PlanetSingle = (props) => {
                 </div>
               </div>
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">Population</h5>
                     <p className="card-text">

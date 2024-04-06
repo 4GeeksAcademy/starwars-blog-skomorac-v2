@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
 import { Context } from "../store/appContext";
@@ -6,6 +6,16 @@ import Dropdown from "react-bootstrap/Dropdown";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
+  const [totalFavorites, setTotalFavorites] = useState(0);
+
+  useEffect(() => {
+    // Calculate total number of favorites
+    setTotalFavorites(
+      store.favoritesPeople.length +
+        store.favoritesVehicles.length +
+        store.favoritesPlanets.length
+    );
+  }, [store.favoritesPeople, store.favoritesVehicles, store.favoritesPlanets]);
 
   const deleteFavorite = (type, id) => {
     switch (type) {
@@ -21,10 +31,12 @@ export const Navbar = () => {
       default:
         break;
     }
+    // Update total number of favorites after deletion
+    setTotalFavorites(totalFavorites - 1);
   };
 
   return (
-    <nav className="navbar navbar-light mb-3 mx-5">
+    <nav className="navbar navbar-light mb-3 mx-4">
       <Link to="/">
         <img
           src={logo}
@@ -38,6 +50,9 @@ export const Navbar = () => {
         <Dropdown>
           <Dropdown.Toggle variant="warning" id="dropdown-basic">
             Favorites
+            <span className="badge badge-pill badge-secondary ml-1">
+              {totalFavorites}
+            </span>
           </Dropdown.Toggle>
           <Dropdown.Menu>
             {store.favoritesPeople.map((favorite, index) => (

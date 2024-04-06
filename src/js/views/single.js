@@ -35,7 +35,7 @@ export const Single = (props) => {
             <hr />
             <div className="row">
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">Gender</h5>
                     <p className="card-text">
@@ -45,7 +45,7 @@ export const Single = (props) => {
                 </div>
               </div>
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">Height</h5>
                     <p className="card-text">
@@ -55,7 +55,7 @@ export const Single = (props) => {
                 </div>
               </div>
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">Mass</h5>
                     <p className="card-text">{store.peopleProperties?.mass}</p>
@@ -65,7 +65,7 @@ export const Single = (props) => {
             </div>
             <div className="row mt-3">
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">Hair color</h5>
                     <p className="card-text">
@@ -75,7 +75,7 @@ export const Single = (props) => {
                 </div>
               </div>
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">Eye color</h5>
                     <p className="card-text">
@@ -85,7 +85,7 @@ export const Single = (props) => {
                 </div>
               </div>
               <div className="col-sm-4 mb-3">
-                <div className="card border-dark">
+                <div className="card border-light">
                   <div className="card-body">
                     <h5 className="card-title">Birth year</h5>
                     <p className="card-text">
