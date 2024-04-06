@@ -522,6 +522,30 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
+      deleteFavoritePerson: (id) => {
+        const { favoritesPeople } = getStore();
+        const updatedFavorites = favoritesPeople.filter(
+          (favorite) => favorite.id !== id
+        );
+        setStore({ favoritesPeople: updatedFavorites });
+      },
+
+      deleteFavoriteVehicle: (id) => {
+        const { favoritesVehicles } = getStore();
+        const updatedFavorites = favoritesVehicles.filter(
+          (favorite) => favorite.id !== id
+        );
+        setStore({ favoritesVehicles: updatedFavorites });
+      },
+
+      deleteFavoritePlanet: (id) => {
+        const { favoritesPlanets } = getStore();
+        const updatedFavorites = favoritesPlanets.filter(
+          (favorite) => favorite.id !== id
+        );
+        setStore({ favoritesPlanets: updatedFavorites });
+      },
+
       getPeople: async () => {
         const oldStore = getStore();
         try {

@@ -5,7 +5,23 @@ import { Context } from "../store/appContext";
 import Dropdown from "react-bootstrap/Dropdown";
 
 export const Navbar = () => {
-  const { store } = useContext(Context);
+  const { store, actions } = useContext(Context);
+
+  const deleteFavorite = (type, id) => {
+    switch (type) {
+      case "people":
+        actions.deleteFavoritePerson(id);
+        break;
+      case "vehicles":
+        actions.deleteFavoriteVehicle(id);
+        break;
+      case "planets":
+        actions.deleteFavoritePlanet(id);
+        break;
+      default:
+        break;
+    }
+  };
 
   return (
     <nav className="navbar navbar-light bg-light mb-3">
@@ -27,6 +43,10 @@ export const Navbar = () => {
             {store.favoritesPeople.map((favorite, index) => (
               <Dropdown.Item key={index}>
                 <Link to={`/single/${favorite.id}`}>{favorite.name}</Link>
+                <i
+                  className="fa fa-trash ml-2"
+                  onClick={() => deleteFavorite("people", favorite.id)}
+                ></i>
               </Dropdown.Item>
             ))}
             {store.favoritesVehicles.map((favorite, index) => (
@@ -34,11 +54,19 @@ export const Navbar = () => {
                 <Link to={`/vehicleSingle/${favorite.id}`}>
                   {favorite.name}
                 </Link>
+                <i
+                  className="fa fa-trash ml-2"
+                  onClick={() => deleteFavorite("vehicles", favorite.id)}
+                ></i>
               </Dropdown.Item>
             ))}
             {store.favoritesPlanets.map((favorite, index) => (
               <Dropdown.Item key={index}>
                 <Link to={`/planetSingle/${favorite.id}`}>{favorite.name}</Link>
+                <i
+                  className="fa fa-trash ml-2"
+                  onClick={() => deleteFavorite("planets", favorite.id)}
+                ></i>
               </Dropdown.Item>
             ))}
           </Dropdown.Menu>
