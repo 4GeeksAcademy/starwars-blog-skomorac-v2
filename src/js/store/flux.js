@@ -484,6 +484,18 @@ const getState = ({ getStore, getActions, setStore }) => {
     },
 
     actions: {
+      addToFavorites: (id, name) => {
+        const { favorites } = getStore();
+        const isFavoriteExist = favorites.find(
+          (favorite) => favorite.id === id
+        );
+
+        if (!isFavoriteExist) {
+          const newFavorite = { id, name };
+          setStore({ favorites: [...favorites, newFavorite] });
+        }
+      },
+
       getPeople: async () => {
         const oldStore = getStore();
         try {

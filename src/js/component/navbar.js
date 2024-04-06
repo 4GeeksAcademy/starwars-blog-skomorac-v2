@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
-import("../../styles/index.css");
+import { Context } from "../store/appContext";
+import Dropdown from "react-bootstrap/Dropdown";
 
 export const Navbar = () => {
+  const { store } = useContext(Context);
+
   return (
     <nav className="navbar navbar-light bg-light mb-3">
       <Link to="/">
@@ -16,24 +19,18 @@ export const Navbar = () => {
         />
       </Link>
       <div className="ml-auto">
-        <div className="dropdown">
-          <button
-            className="btn btn-primary dropdown-toggle"
-            type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
+        <Dropdown>
+          <Dropdown.Toggle variant="success" id="dropdown-basic">
             Favorites
-          </button>
-          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <Link to="/demo" className="dropdown-item">
-              Demo Link
-            </Link>
-            {/* Add more dropdown items here */}
-          </div>
-        </div>
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            {store.favorites.map((favorite, index) => (
+              <Dropdown.Item key={index}>
+                <Link to={`/single/${favorite.id}`}>{favorite.name}</Link>
+              </Dropdown.Item>
+            ))}
+          </Dropdown.Menu>
+        </Dropdown>
       </div>
     </nav>
   );

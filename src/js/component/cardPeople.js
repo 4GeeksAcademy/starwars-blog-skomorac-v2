@@ -7,13 +7,17 @@ export const CardPeople = () => {
   const { store, actions } = useContext(Context);
   const cardContainerRef = useRef(null);
 
-  const addToFavorites = () => {
-    console.log(store.people);
-  };
+  const addToFavorites = (id, name) => {
+    // Check if the favorite already exists
+    const isFavoriteExist = store.favorites.find(
+      (favorite) => favorite.id === id
+    );
 
-  // useEffect(() => {
-  //   actions.fetchCharacterDetails();
-  // }, []);
+    if (!isFavoriteExist) {
+      // Add to favorites if it doesn't exist
+      actions.addToFavorites(id, name);
+    }
+  };
 
   return (
     <div className="container mb-5">
@@ -53,7 +57,7 @@ export const CardPeople = () => {
                       </Link>
                       <button
                         className="btn btn-warning ml-2 favorite-btn"
-                        onClick={addToFavorites}
+                        onClick={() => addToFavorites(el.uid, el.name)}
                       >
                         <i className="fa fa-star mr-2"></i>
                       </button>

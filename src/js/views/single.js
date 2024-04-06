@@ -6,8 +6,6 @@ import { Context } from "../store/appContext";
 export const Single = (props) => {
   const { store, actions } = useContext(Context);
   const { theid } = useParams();
-  console.log(store.peopleProperties);
-  console.log(store.characterDetails);
 
   useEffect(() => {
     actions.getPeopleProperties(theid);
