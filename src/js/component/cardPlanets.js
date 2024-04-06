@@ -9,13 +9,13 @@ export const CardPlanet = () => {
 
   const addToFavorites = (id, name) => {
     // Check if the favorite already exists
-    const isFavoriteExist = store.favorites.find(
+    const isFavoriteExist = store.favoritesPlanets.find(
       (favorite) => favorite.name === name
     );
 
     if (!isFavoriteExist) {
       // Add to favorites if it doesn't exist
-      actions.addToFavorites(id, name);
+      actions.addToFavoritesPlanets(id, name);
     }
   };
 

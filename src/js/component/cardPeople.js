@@ -9,13 +9,13 @@ export const CardPeople = () => {
 
   const addToFavorites = (id, name) => {
     // Check if the favorite already exists
-    const isFavoriteExist = store.favorites.find(
+    const isFavoriteExist = store.favoritesPeople.find(
       (favorite) => favorite.name === name
     );
 
     if (!isFavoriteExist) {
       // Add to favorites if it doesn't exist
-      actions.addToFavorites(id, name);
+      actions.addToFavoritesPeople(id, name);
     }
   };
 

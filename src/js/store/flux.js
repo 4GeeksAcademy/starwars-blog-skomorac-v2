@@ -480,19 +480,45 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
       },
 
-      favorites: [],
+      favoritesPeople: [],
+      favoritesVehicles: [],
+      favoritesPlanets: [],
     },
 
     actions: {
-      addToFavorites: (id, name) => {
-        const { favorites } = getStore();
-        const isFavoriteExist = favorites.find(
+      addToFavoritesPeople: (id, name) => {
+        const { favoritesPeople } = getStore();
+        const isFavoriteExist = favoritesPeople.find(
           (favorite) => favorite.name === name
         );
 
         if (!isFavoriteExist) {
           const newFavorite = { id, name };
-          setStore({ favorites: [...favorites, newFavorite] });
+          setStore({ favoritesPeople: [...favoritesPeople, newFavorite] });
+        }
+      },
+
+      addToFavoritesVehicles: (id, name) => {
+        const { favoritesVehicles } = getStore();
+        const isFavoriteExist = favoritesVehicles.find(
+          (favorite) => favorite.name === name
+        );
+
+        if (!isFavoriteExist) {
+          const newFavorite = { id, name };
+          setStore({ favoritesVehicles: [...favoritesVehicles, newFavorite] });
+        }
+      },
+
+      addToFavoritesPlanets: (id, name) => {
+        const { favoritesPlanets } = getStore();
+        const isFavoriteExist = favoritesPlanets.find(
+          (favorite) => favorite.name === name
+        );
+
+        if (!isFavoriteExist) {
+          const newFavorite = { id, name };
+          setStore({ favoritesPlanets: [...favoritesPlanets, newFavorite] });
         }
       },
 

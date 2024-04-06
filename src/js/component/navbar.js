@@ -24,9 +24,21 @@ export const Navbar = () => {
             Favorites
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            {store.favorites.map((favorite, index) => (
+            {store.favoritesPeople.map((favorite, index) => (
               <Dropdown.Item key={index}>
                 <Link to={`/single/${favorite.id}`}>{favorite.name}</Link>
+              </Dropdown.Item>
+            ))}
+            {store.favoritesVehicles.map((favorite, index) => (
+              <Dropdown.Item key={index}>
+                <Link to={`/vehicleSingle/${favorite.id}`}>
+                  {favorite.name}
+                </Link>
+              </Dropdown.Item>
+            ))}
+            {store.favoritesPlanets.map((favorite, index) => (
+              <Dropdown.Item key={index}>
+                <Link to={`/planetSingle/${favorite.id}`}>{favorite.name}</Link>
               </Dropdown.Item>
             ))}
           </Dropdown.Menu>
