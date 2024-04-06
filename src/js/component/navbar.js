@@ -24,7 +24,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-light bg-light mb-3 mx-5">
+    <nav className="navbar navbar-light mb-3 mx-5">
       <Link to="/">
         <img
           src={logo}
