@@ -24,7 +24,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-light bg-light mb-3">
+    <nav className="navbar navbar-light bg-light mb-3 mx-5">
       <Link to="/">
         <img
           src={logo}
@@ -36,35 +36,35 @@ export const Navbar = () => {
       </Link>
       <div className="ml-auto">
         <Dropdown>
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
+          <Dropdown.Toggle variant="warning" id="dropdown-basic">
             Favorites
           </Dropdown.Toggle>
           <Dropdown.Menu>
             {store.favoritesPeople.map((favorite, index) => (
-              <Dropdown.Item key={index}>
+              <Dropdown.Item key={index} className="drop-menu">
                 <Link to={`/single/${favorite.id}`}>{favorite.name}</Link>
                 <i
-                  className="fa fa-trash ml-2"
+                  className="fa fa-trash ml-2 position-absolute trash-icon"
                   onClick={() => deleteFavorite("people", favorite.id)}
                 ></i>
               </Dropdown.Item>
             ))}
             {store.favoritesVehicles.map((favorite, index) => (
-              <Dropdown.Item key={index}>
+              <Dropdown.Item key={index} className="drop-menu">
                 <Link to={`/vehicleSingle/${favorite.id}`}>
                   {favorite.name}
                 </Link>
                 <i
-                  className="fa fa-trash ml-2"
+                  className="fa fa-trash ml-2 position-absolute trash-icon"
                   onClick={() => deleteFavorite("vehicles", favorite.id)}
                 ></i>
               </Dropdown.Item>
             ))}
             {store.favoritesPlanets.map((favorite, index) => (
-              <Dropdown.Item key={index}>
+              <Dropdown.Item key={index} className="drop-menu">
                 <Link to={`/planetSingle/${favorite.id}`}>{favorite.name}</Link>
                 <i
-                  className="fa fa-trash ml-2"
+                  className="fa fa-trash ml-2 position-absolute trash-icon"
                   onClick={() => deleteFavorite("planets", favorite.id)}
                 ></i>
               </Dropdown.Item>
