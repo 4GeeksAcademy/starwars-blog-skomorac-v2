@@ -1,18 +1,23 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/index.css";
 
 export const CardPlanet = () => {
   const { store, actions } = useContext(Context);
   const cardContainerRef = useRef(null);
 
-  const addToFavorites = () => {
-    console.log(store.people);
-  };
+  const addToFavorites = (id, name) => {
+    // Check if the favorite already exists
+    const isFavoriteExist = store.favorites.find(
+      (favorite) => favorite.id === id
+    );
 
-  // useEffect(() => {
-  //   actions.fetchPlanetDetails();
-  // }, []);
+    if (!isFavoriteExist) {
+      // Add to favorites if it doesn't exist
+      actions.addToFavorites(id, name);
+    }
+  };
 
   return (
     <div className="container mb-5">
@@ -52,7 +57,7 @@ export const CardPlanet = () => {
                       </Link>
                       <button
                         className="btn btn-warning ml-2 favorite-btn"
-                        onClick={addToFavorites}
+                        onClick={() => addToFavorites(el.uid, el.name)}
                       >
                         <i className="fa fa-star mr-2"></i>
                       </button>
