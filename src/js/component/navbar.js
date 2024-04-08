@@ -44,7 +44,7 @@ export const Navbar = () => {
           width="100"
           height="50"
           className="d-inline-block align-top logo"
-          alt="Logo"
+          alt="Home Page"
         />
       </Link>
       <SearchBar
