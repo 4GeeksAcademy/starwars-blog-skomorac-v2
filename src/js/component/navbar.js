@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../../img/logo.png";
 import { Context } from "../store/appContext";
 import Dropdown from "react-bootstrap/Dropdown";
+import SearchBar from "./SearchBar";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
@@ -46,6 +47,19 @@ export const Navbar = () => {
           alt="Logo"
         />
       </Link>
+      <SearchBar
+        options={store.people.map((person) => person.name)}
+        onSelect={(selected) => {
+          // Handle selected character
+          const selectedChar = store.people.find(
+            (person) => person.name === selected
+          );
+          // Redirect to details page with uid
+          const link = document.createElement("a");
+          link.href = `/single/${selectedChar.uid}`;
+          link.click();
+        }}
+      />
       <div className="ml-auto">
         <Dropdown>
           <Dropdown.Toggle variant="warning" id="dropdown-basic">
