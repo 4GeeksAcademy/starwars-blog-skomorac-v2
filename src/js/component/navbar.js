@@ -37,7 +37,9 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-light mb-3 mx-4">
+    <nav className="navbar navbar-light bg-dark mb-5 mx-4 fixed-top">
+      {" "}
+      {/* Added fixed-top class */}
       <Link to="/">
         <img
           src={logo}
@@ -82,7 +84,6 @@ export const Navbar = () => {
           }
         }}
       />
-
       <div className="ml-auto">
         <Dropdown>
           <Dropdown.Toggle variant="warning" id="dropdown-basic">

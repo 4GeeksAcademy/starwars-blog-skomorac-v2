@@ -12,6 +12,7 @@
   color: rgb(255, 193, 7);
   text-align: left;
   text-transform: capitalize;
+  margin-top: 2rem;
 }
 
 .card-container {
@@ -25,6 +26,7 @@
   flex: 0 0 250px;
   height: 450px;
   margin-right: 10px; /* Add some margin between cards */
+
   scroll-snap-align: start;
 }
 
