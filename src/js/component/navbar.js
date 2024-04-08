@@ -48,18 +48,41 @@ export const Navbar = () => {
         />
       </Link>
       <SearchBar
-        options={store.people.map((person) => person.name)}
+        options={[
+          ...store.people.map((person) => person.name),
+          ...store.planets.map((planet) => planet.name),
+          ...store.vehicles.map((vehicle) => vehicle.name),
+        ]}
         onSelect={(selected) => {
-          // Handle selected character
-          const selectedChar = store.people.find(
+          const selectedPerson = store.people.find(
             (person) => person.name === selected
           );
-          // Redirect to details page with uid
-          const link = document.createElement("a");
-          link.href = `/single/${selectedChar.uid}`;
-          link.click();
+          const selectedPlanet = store.planets.find(
+            (planet) => planet.name === selected
+          );
+          const selectedVehicle = store.vehicles.find(
+            (vehicle) => vehicle.name === selected
+          );
+
+          if (selectedPerson) {
+            console.log("Person UID:", selectedPerson.uid);
+            // Redirect for person
+            window.location.href = `/single/${selectedPerson.uid}`;
+          } else if (selectedPlanet) {
+            console.log("Planet UID:", selectedPlanet.uid);
+            // Redirect for planet
+            window.location.href = `/planetSingle/${selectedPlanet.uid}`;
+          } else if (selectedVehicle) {
+            console.log("Vehicle UID:", selectedVehicle.uid);
+            // Redirect for vehicle
+            window.location.href = `/vehicleSingle/${selectedVehicle.uid}`;
+          } else {
+            // Handle if selected item is not found
+            console.error("Selected item not found in store!");
+          }
         }}
       />
+
       <div className="ml-auto">
         <Dropdown>
           <Dropdown.Toggle variant="warning" id="dropdown-basic">

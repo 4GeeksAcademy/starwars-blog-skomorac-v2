@@ -14,7 +14,7 @@ const SearchBar = ({ options, onSelect }) => {
       id="search-bar"
       options={options}
       onChange={handleSearch}
-      placeholder="Search characters..."
+      placeholder="Type to search..."
     />
   );
 };
