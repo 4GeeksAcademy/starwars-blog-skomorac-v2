@@ -34,6 +34,10 @@ export const Navbar = () => {
     }
     // Update total number of favorites after deletion
     setTotalFavorites(totalFavorites - 1);
+    // Re-enable the button/link by removing the disabled attribute
+    document
+      .querySelector(`[href="/single/${id}"]`)
+      .removeAttribute("disabled");
   };
 
   return (
@@ -95,7 +99,9 @@ export const Navbar = () => {
           <Dropdown.Menu>
             {store.favoritesPeople.map((favorite, index) => (
               <Dropdown.Item key={index} className="drop-menu">
-                <Link to={`/single/${favorite.id}`}>{favorite.name}</Link>
+                <Link to={`/single/${favorite.id}`} disabled>
+                  {favorite.name}
+                </Link>
                 <i
                   className="fa fa-trash ml-2 position-absolute trash-icon"
                   onClick={() => deleteFavorite("people", favorite.id)}

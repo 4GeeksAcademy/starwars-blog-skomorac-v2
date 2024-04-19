@@ -58,6 +58,9 @@ export const CardPeople = () => {
                       <button
                         className="btn btn-warning ml-2 favorite-btn"
                         onClick={() => addToFavorites(el.uid, el.name)}
+                        disabled={store.favoritesPeople.some(
+                          (favorite) => favorite.name === el.name
+                        )}
                       >
                         <i className="fa fa-star mr-2"></i>
                       </button>
